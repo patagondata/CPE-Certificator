@@ -1,0 +1,110 @@
+import Head from 'next/head';
+import { Box, Button, Container, Divider, Grid, Paper, Stack, SvgIcon, Typography } from '@mui/material';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableRow from '@mui/material/TableRow';
+import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
+import ExecutionsStatusProgressAlert from 'src/sections/executions/executions-status-progress-panel';
+import ExecutionStatusTests from 'src/sections/executions/executions-status-tests';
+import StopCircleIcon from '@heroicons/react/24/solid/NoSymbolIcon';
+import ArrowDownOnSquareStackIcon from '@heroicons/react/24/solid/ArrowDownOnSquareStackIcon';
+import BarsArrowUpIcon from '@heroicons/react/24/solid/BarsArrowUpIcon';
+
+const Page = () => (
+  <>
+    <Head>
+      <title>
+        Detalles de la ejecución | Patagondata
+      </title>
+    </Head>
+    <Box
+      component="main"
+      sx={{
+        flexGrow: 1,
+        py: 8
+      }}
+    >
+      <Container maxWidth="lg">
+
+        <Stack spacing={3}>
+          <Typography variant="h4">
+            <div>
+
+
+              ALCLB3F49710 - Huawei 521</div>
+          </Typography>
+
+          <div>
+            <ExecutionsStatusProgressAlert />
+          </div>
+          <Divider />
+          <div>
+            <ExecutionStatusTests />
+          </div>
+          <Divider />
+          <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+              <TableBody>
+                <TableRow>
+                  <TableCell align="center">
+                    <Button
+                      href="/executions"
+                      variant="contained"
+                      startIcon={(
+                        <SvgIcon fontSize="small">
+                          <BarsArrowUpIcon />
+                        </SvgIcon>
+                      )}
+                    >
+                      Resumen de Certificación de Dispositivos
+                    </Button>
+                  </TableCell>
+                  <TableCell align="center">
+                    <Button
+                      variant="contained"
+                      startIcon={(
+                        <SvgIcon fontSize="small">
+                          <StopCircleIcon />
+                        </SvgIcon>
+                      )}
+                    >
+                      Detener Proceso de Certificación
+                    </Button>
+                  </TableCell>
+                  <TableCell></TableCell>
+                  <TableCell align="left">
+                    <Button
+                      href="/assets/example-files/TR_Certification_V1.1.xlsx" target="_blank" download
+                      variant="contained"
+                      startIcon={(
+                        <SvgIcon fontSize="small">
+                          <ArrowDownOnSquareStackIcon />
+                        </SvgIcon>
+                      )}
+                    >
+                      Exportar Resultados
+                    </Button>
+                  </TableCell>
+                  <TableCell></TableCell>
+                  <TableCell></TableCell>
+
+                </TableRow>
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Stack>
+      </Container>
+
+    </Box>
+  </>
+);
+
+Page.getLayout = (page) => (
+  <DashboardLayout>
+    {page}
+  </DashboardLayout>
+);
+
+export default Page;
