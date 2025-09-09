@@ -7,12 +7,12 @@
   "private": false,
   "scripts": {
     "dev": "next",
+	"force-install": "npm install --force",
     "build": "next build",
     "start": "next start",
     "export": "next export",
     "lint": "next lint",
-    "lint-fix": "next lint --fix",
-	"force-install": "npm install --force"
+    "lint-fix": "next lint --fix"	
   },
   "dependencies": {
     "@emotion/cache": "11.10.5",
