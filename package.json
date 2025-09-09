@@ -7,7 +7,6 @@
   "private": false,
   "scripts": {
     "dev": "next",
-	"test": "echo 'Running tests'",
 	"force-install": "npm install --force",
     "build": "next build",
     "start": "next start",
