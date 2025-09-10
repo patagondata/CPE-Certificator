@@ -77,7 +77,7 @@ export default function SettingsDeleteObjectTests() {
                                 {items.map((customer) => {
                                     return (
                                         <TableRow
-                                            hover>
+                                            hover key={customer.parameter}> 
                                             <TableCell padding="checkbox">
                                                 <Checkbox checked/>
                                             </TableCell>

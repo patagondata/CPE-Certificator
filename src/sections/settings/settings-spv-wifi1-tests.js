@@ -83,7 +83,7 @@ export default function SettingsSPVWifi1Tests() {
                                 {items.map((customer) => {
                                     return (
                                         <TableRow
-                                            hover>
+                                            hover key={customer.parameter}>
                                             <TableCell padding="checkbox">
                                                 <Checkbox checked/>
                                             </TableCell>
