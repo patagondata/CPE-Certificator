@@ -8,6 +8,7 @@ import SettingsCustomTests from 'src/sections/settings/settings-custom-tests-tab
 import PlusIcon from '@heroicons/react/24/solid/PlusIcon';
 import rpcList from './rpc-list';
 import { Autocomplete, Box, Button, Card, CardContent, Divider, Grid, SvgIcon, TextField } from '@mui/material';
+import { Logo } from 'src/components/maintenance_img';
 
 export default function SettingsPanelBulkDataTests() {
     return (
@@ -20,12 +21,9 @@ export default function SettingsPanelBulkDataTests() {
                     <Typography component="span" variant="h6">Pruebas Bulk Data</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-
                     <Card>
-                        <CardContent sx={{ pt: 1 }}>
-                            <Box sx={{ m: 1 }}>
-                                <Typography component="span" variant="h4">TBD</Typography>
-                            </Box>
+                        <CardContent sx={{ pt: 0 }}>                            
+                            <Logo/>
                         </CardContent>
                     </Card>
                 </AccordionDetails>

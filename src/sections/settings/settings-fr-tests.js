@@ -14,23 +14,9 @@ import { Scrollbar } from 'src/components/scrollbar';
 
 const items = [
     {
-        testName: 'Factory Reset response',
+        testName: 'Factory Reset',
         parameter: 'InternetGatewayDevice.Layer3Forwarding.Forwarding.',
         value: '300',
-        customParameter: '',
-        customValue: ''
-    },
-    {
-        testName: 'Factory Reset response',
-        parameter: 'InternetGatewayDevice.test',
-        value: '120, 1',
-        customParameter: '',
-        customValue: ''
-    },
-    {
-        testName: 'Inform bootstrap',
-        parameter: 'InternetGatewayDevice.',
-        value: 'test',
         customParameter: '',
         customValue: ''
     }
@@ -49,17 +35,7 @@ export default function SettingsFRTests() {
             <Card>
                 <Scrollbar>
                     <Box sx={{ minWidth: 800 }}>
-                        <Table>
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell padding="checkbox">
-                                        <Checkbox checked/>
-                                    </TableCell>
-                                    <TableCell>
-                                        Prueba
-                                    </TableCell>
-                                </TableRow>
-                            </TableHead>
+                        <Table>                            
                             <TableBody>
                                 {items.map((customer) => {
                                     return (

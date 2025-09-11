@@ -19,27 +19,6 @@ const items = [
         value: '300',
         customParameter: '',
         customValue: ''
-    },
-    {
-        testName: 'Reboot response',
-        parameter: 'InternetGatewayDevice.test',
-        value: '120, 1',
-        customParameter: '',
-        customValue: ''
-    },
-    {
-        testName: 'Informs boot and M reboot',
-        parameter: 'InternetGatewayDevice.',
-        value: 'test',
-        customParameter: '',
-        customValue: ''
-    },
-    {
-        testName: 'Command key',
-        parameter: 'InternetGatewayDevice.ManagementServer.',
-        value: 'test',
-        customParameter: '',
-        customValue: ''
     }
 ];
 
@@ -57,16 +36,7 @@ export default function SettingsRebootTests() {
                 <Scrollbar>
                     <Box sx={{ minWidth: 800 }}>
                         <Table>
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell padding="checkbox">
-                                        <Checkbox checked/>
-                                    </TableCell>
-                                    <TableCell>
-                                        Prueba
-                                    </TableCell>
-                                </TableRow>
-                            </TableHead>
+                           
                             <TableBody>
                                 {items.map((customer) => {
                                     return (
