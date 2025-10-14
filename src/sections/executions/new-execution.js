@@ -103,7 +103,7 @@ export default function NewExecution() {
 
           </form>
           <DialogContentText>
-            Desea utilizar la plantilla "Generica" de pruebas?
+            Desea utilizar la plantilla Generica de pruebas?
             <Switch
               checked={checked}
               onChange={handleChange}

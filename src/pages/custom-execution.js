@@ -46,7 +46,7 @@ const Page = () => (
           </Stack>
           <div className="App" style={{ backgroundColor: "yellow" }}>
           <Typography variant="h7">
-            Antes de comenzar, personalice las pruebas que desea ejecutar, una vez que haya terminado, haga click en <b>"Comenzar Certificación"</b>
+            Antes de comenzar, personalice las pruebas que desea ejecutar, una vez que haya terminado, haga click en <b>Comenzar Certificación</b>
           </Typography>
           </div>
           <div>
