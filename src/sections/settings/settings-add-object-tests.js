@@ -8,9 +8,12 @@ import {
     TableHead,
     TablePagination,
     TableRow,
-    Typography
+    Typography,
+    Autocomplete,
+    TextField
 } from '@mui/material';
 import { Scrollbar } from 'src/components/scrollbar';
+import priorityList from './priority-list';
 
 const items = [
     {
@@ -66,6 +69,9 @@ export default function SettingsAddObjectTests() {
                                         Prueba
                                     </TableCell>
                                     <TableCell>
+	Prioridad
+</TableCell>
+                                    <TableCell>
                                         Parametro Default
                                     </TableCell>
                                     <TableCell>
@@ -83,6 +89,16 @@ export default function SettingsAddObjectTests() {
                                             </TableCell>
                                             <TableCell>
                                                 {customer.testName}
+                                            </TableCell>
+                                            <TableCell>                                            
+                                                <Autocomplete
+                                                    defaultValue="Alta"
+                                                    disablePortal
+                                                    options={priorityList}
+                                                    sx={{ width: 50 }}
+                                                    renderInput={(params) => <TextField {...params}
+                                                    />}
+                                                />
                                             </TableCell>
                                             <TableCell>
                                                 {customer.parameter}

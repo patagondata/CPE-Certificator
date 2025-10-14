@@ -8,9 +8,12 @@ import {
     TableHead,
     TablePagination,
     TableRow,
-    Typography
+    Typography,
+    Autocomplete,
+    TextField
 } from '@mui/material';
 import { Scrollbar } from 'src/components/scrollbar';
+import priorityList from './priority-list';
 
 const items = [
     {
@@ -36,17 +39,45 @@ export default function SettingsRebootTests() {
                 <Scrollbar>
                     <Box sx={{ minWidth: 800 }}>
                         <Table>
-                           
+
                             <TableBody>
                                 {items.map((customer) => {
                                     return (
                                         <TableRow
                                             hover key={customer.parameter}>
                                             <TableCell padding="checkbox">
-                                                <Checkbox checked/>
+                                                <Checkbox checked />
                                             </TableCell>
                                             <TableCell>
                                                 {customer.testName}
+                                            </TableCell>
+                                            <TableCell>
+                                                <Autocomplete
+                                                    defaultValue="Alta"
+                                                    options={priorityList}
+                                                    sx={{ width: 250 }}
+                                                    renderInput={(params) => <TextField {...params}
+                                                        label="Prioridad"
+                                                    />}
+                                                />
+                                            </TableCell>
+                                            <TableCell>
+                                                <Autocomplete
+                                                    defaultValue="Manual"
+                                                    options={['Automática', 'Manual']}
+                                                    sx={{ width: 250 }}
+                                                    renderInput={(params) => <TextField {...params}
+                                                        label="Tipom de ejecución"
+                                                    />}
+                                                />
+                                            </TableCell>
+                                            <TableCell>
+                                                <TextField
+                                                    
+                                                    name="timeout"
+                                                    label="Tiempo de espera (ms)"
+                                                    value="300000"
+                                                />
                                             </TableCell>
                                         </TableRow>
                                     );

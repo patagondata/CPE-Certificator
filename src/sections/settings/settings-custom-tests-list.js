@@ -2,18 +2,20 @@ import * as React from 'react';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
-import BasicList from './basic-list';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import CheckCircleIcon from '@heroicons/react/24/solid/CheckCircleIcon';
-import { Alert, Box, CircularProgress, Divider, SvgIcon } from '@mui/material';
-import ExecutionsResultGPV from './executions-result-gpv';
-import ExecutionsResultSPV from './executions-result-spv';
-import ExecutionsResultAddObject from './executions-result-add-object';
-import ExecutionsResultReboot from './executions-result-reboot';
-import ExecutionsResultFactoryReset from './executions-result-fr';
+import CustomSettingsSPVTests from 'src/sections/settings/custom_execution/custom-settings-spv-tests';
+import CustomSettingsGPVTests from 'src/sections/settings/custom_execution/custom-settings-gpv-tests';
+import CustomSettingsAddObjectTests from 'src/sections/settings/custom_execution/custom-settings-add-object-tests';
+import CustomSettingsDeleteObjectTests from 'src/sections/settings/custom_execution/custom-settings-delete-object-tests';
+import CustomSettingsRebootTests from 'src/sections/settings/custom_execution/custom-settings-reboot-tests';
+import CustomSettingsFRTests from 'src/sections/settings/custom_execution/custom-settings-fr-tests';
+import CustomSettingsGPVWifi1Tests from 'src/sections/settings/custom_execution/custom-settings-gpv-wifi1-tests';
+import CustomSettingsGPVWifi2Tests from 'src/sections/settings/custom_execution/custom-settings-gpv-wifi2-tests';
+import CustomSettingsSPVWifi1Tests from 'src/sections/settings/custom_execution/custom-settings-spv-wifi1-tests';
+import CustomSettingsSPVWifi2Tests from 'src/sections/settings/custom_execution/custom-settings-spv-wifi2-tests';
 
-export default function ExecutionStatusTests() {
+export default function SettingsCustomTestsList() {
     return (
         <div>
             <Accordion>
@@ -21,16 +23,10 @@ export default function ExecutionStatusTests() {
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1-content"
                     id="panel1-header">
-                    
-                    <Typography component="span" variant="h6">GetParameterValue</Typography>
-                    <Box sx={{ display: 'flex' }}>
-                        <SvgIcon fontSize="small">
-                        <CheckCircleIcon />
-                      </SvgIcon>
-                    </Box>
+                    <Typography component="span" variant="h5">GetParameterValue</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <ExecutionsResultGPV/>
+                    <CustomSettingsGPVTests />
                 </AccordionDetails>
             </Accordion>
             <Accordion>
@@ -38,15 +34,10 @@ export default function ExecutionStatusTests() {
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel2-content"
                     id="panel2-header">
-                    <Typography component="span" variant="h6">SetParameterValue</Typography>
-                    <Box sx={{ display: 'flex' }}>
-                        <SvgIcon fontSize="small">
-                        <CheckCircleIcon />
-                      </SvgIcon>
-                    </Box>
+                    <Typography component="span" variant="h5">SetParameterValue</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <ExecutionsResultSPV/>
+                    <CustomSettingsSPVTests />
                 </AccordionDetails>
             </Accordion>
             <Accordion>
@@ -54,13 +45,10 @@ export default function ExecutionStatusTests() {
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel3-content"
                     id="panel3-header">
-                    <Typography component="span" variant="h6">AddObject</Typography>
-                    <Box sx={{ display: 'flex' }}>
-                        <CircularProgress size="22px" color="primary" />
-                    </Box>
+                    <Typography component="span" variant="h5">AddObject</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <ExecutionsResultAddObject/>
+                    <CustomSettingsAddObjectTests />
                 </AccordionDetails>
             </Accordion>
             <Accordion>
@@ -68,13 +56,10 @@ export default function ExecutionStatusTests() {
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel4-content"
                     id="panel4-header">
-                    <Typography component="span" variant="h6">DeleteObject</Typography>
-                    <Box sx={{ display: 'flex' }}>
-                        <CircularProgress size="22px" color="primary" />
-                    </Box>
+                    <Typography component="span" variant="h5">DeleteObject</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-
+                    <CustomSettingsDeleteObjectTests />
                 </AccordionDetails>
             </Accordion>
             <Accordion>
@@ -82,13 +67,10 @@ export default function ExecutionStatusTests() {
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel5-content"
                     id="panel5-header">
-                    <Typography component="span" variant="h6">Reboot</Typography>
-                    <Box sx={{ display: 'flex' }}>
-                        <CircularProgress size="22px" color="warning" />
-                    </Box>
+                    <Typography component="span" variant="h5">Reboot</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <ExecutionsResultReboot/>
+                    <CustomSettingsRebootTests />
                 </AccordionDetails>
             </Accordion>
             <Accordion>
@@ -96,13 +78,10 @@ export default function ExecutionStatusTests() {
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel6-content"
                     id="panel6-header">
-                    <Typography component="span" variant="h6">Factory Reset</Typography>
-                    <Box sx={{ display: 'flex' }}>
-                        <CircularProgress size="22px" color="warning" />
-                    </Box>
+                    <Typography component="span" variant="h5">Factory Reset</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <ExecutionsResultFactoryReset/>
+                    <CustomSettingsFRTests />
                 </AccordionDetails>
             </Accordion>
             <Accordion>
@@ -110,10 +89,7 @@ export default function ExecutionStatusTests() {
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel7-content"
                     id="panel7-header">
-                    <Typography component="span" variant="h6">Consulta de Smart WiFi</Typography>
-                    <Box sx={{ display: 'flex' }}>
-                        <CircularProgress size="22px" color="primary" />
-                    </Box>
+                    <Typography component="span" variant="h5">Consulta de Smart WiFi</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Accordion>
@@ -121,13 +97,10 @@ export default function ExecutionStatusTests() {
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="subpanel7-wifi1-content"
                             id="subpanel7-wifi1-header">
-                            <Typography component="span" variant="h6">WLAN.1</Typography>
-                            <Box sx={{ display: 'flex' }}>
-                                <CircularProgress size="22px" color="primary" />
-                            </Box>
+                            <Typography component="span" variant="h5">WLAN.1</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
-
+                            <CustomSettingsGPVWifi1Tests />
                         </AccordionDetails>
                     </Accordion>
                     <Accordion>
@@ -135,13 +108,10 @@ export default function ExecutionStatusTests() {
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="subpanel7-wifi2-content"
                             id="subpanel7-wifi2-header">
-                            <Typography component="span" variant="h6">WLAN.2</Typography>
-                            <Box sx={{ display: 'flex' }}>
-                                <CircularProgress size="22px" color="primary" />
-                            </Box>
+                            <Typography component="span" variant="h5">WLAN.2</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
-
+                            <CustomSettingsGPVWifi2Tests />
                         </AccordionDetails>
                     </Accordion>
                 </AccordionDetails>
@@ -151,10 +121,7 @@ export default function ExecutionStatusTests() {
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel8-content"
                     id="panel8-header">
-                    <Typography component="span" variant="h6">Reconfiguración de Smart WiFi</Typography>
-                    <Box sx={{ display: 'flex' }}>
-                        <CircularProgress size="22px" color="primary" />
-                    </Box>
+                    <Typography component="span" variant="h5">Reconfiguración de Smart WiFi</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Accordion>
@@ -162,13 +129,10 @@ export default function ExecutionStatusTests() {
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="subpanel8-wifi1-content"
                             id="subpanel8-wifi1-header">
-                            <Typography component="span" variant="h6">WLAN.1</Typography>
-                            <Box sx={{ display: 'flex' }}>
-                                <CircularProgress size="22px" color="primary" />
-                            </Box>
+                            <Typography component="span" variant="h5">WLAN.1</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
-
+                            <CustomSettingsSPVWifi1Tests />
                         </AccordionDetails>
                     </Accordion>
                     <Accordion>
@@ -176,17 +140,14 @@ export default function ExecutionStatusTests() {
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="subpanel8-wifi2-content"
                             id="subpanel8-wifi2-header">
-                            <Typography component="span" variant="h6">WLAN.2</Typography>
-                            <Box sx={{ display: 'flex' }}>
-                                <CircularProgress size="22px" color="primary" />
-                            </Box>
+                            <Typography component="span" variant="h5">WLAN.2</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
-
+                            <CustomSettingsSPVWifi2Tests />
                         </AccordionDetails>
                     </Accordion>
                 </AccordionDetails>
-            </Accordion>
+            </Accordion>            
         </div>
     );
 }

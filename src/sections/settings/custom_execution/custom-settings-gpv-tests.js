@@ -2,51 +2,58 @@ import * as React from 'react';
 import { useCallback } from 'react';
 import Box from '@mui/material/Box';
 import {
-    Card, Checkbox, Divider, FormControlLabel, Stack, Table,
+    Autocomplete,
+    Card, Checkbox, Divider, FormControlLabel, Slider, Stack, Table,
     TableBody,
     TableCell,
     TableHead,
     TablePagination,
     TableRow,
-    Typography,
-    Autocomplete,
-    TextField
+    TextField,
+    Typography
 } from '@mui/material';
 import { Scrollbar } from 'src/components/scrollbar';
-import priorityList from './priority-list';
+import priorityList from '../priority-list';
 
 const items = [
     {
-        testName: 'Delete object',
-        parameter: 'InternetGatewayDevice.Layer3Forwarding.Forwarding.1',
+        testName: 'GPV single parameter',
+        parameter: 'InternetGatewayDevice.ManagementServer.PeriodicInformInterval',
         value: '300',
         customParameter: '',
         customValue: ''
     },
     {
-        testName: 'Delete object in unexistent branch',
-        parameter: 'InternetGatewayDevice.test.1',
+        testName: 'GPV multiple parameters',
+        parameter: 'InternetGatewayDevice.ManagementServer.PeriodicInformInterval, InternetGatewayDevice.ManagementServer.PeriodicInformEnable ',
         value: '120, 1',
         customParameter: '',
         customValue: ''
     },
     {
-        testName: 'Delete object in no multinstance branch',
-        parameter: 'InternetGatewayDevice.1',
+        testName: 'GPV branch',
+        parameter: 'InternetGatewayDevice. ',
         value: 'test',
         customParameter: '',
         customValue: ''
     },
     {
-        testName: 'Delete object persistence after reboot',
+        testName: 'GPV full tree',
         parameter: 'InternetGatewayDevice.ManagementServer.',
+        value: 'test',
+        customParameter: '',
+        customValue: ''
+    },
+    {
+        testName: 'GPV full tree',
+        parameter: 'InternetGatewayDevice.test',
         value: 'test',
         customParameter: '',
         customValue: ''
     }
 ];
 
-export default function SettingsDeleteObjectTests() {
+export default function CustomSettingsGPVTests() {
     const handleSubmit = useCallback(
         (event) => {
             event.preventDefault();
@@ -69,9 +76,6 @@ export default function SettingsDeleteObjectTests() {
                                         Prueba
                                     </TableCell>
                                     <TableCell>
-                                        Prioridad
-                                    </TableCell>
-                                    <TableCell>
                                         Parametro Default
                                     </TableCell>
                                     <TableCell>
@@ -89,16 +93,6 @@ export default function SettingsDeleteObjectTests() {
                                             </TableCell>
                                             <TableCell>
                                                 {customer.testName}
-                                            </TableCell>
-                                            <TableCell>                                            
-                                                <Autocomplete
-                                                    defaultValue="Alta"
-                                                    disablePortal
-                                                    options={priorityList}
-                                                    sx={{ width: 50 }}
-                                                    renderInput={(params) => <TextField {...params}
-                                                    />}
-                                                />
                                             </TableCell>
                                             <TableCell>
                                                 {customer.parameter}

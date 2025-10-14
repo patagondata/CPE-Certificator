@@ -13,7 +13,7 @@ import {
     TextField
 } from '@mui/material';
 import { Scrollbar } from 'src/components/scrollbar';
-import priorityList from './priority-list';
+import priorityList from '../priority-list';
 
 const items = [
     {
@@ -46,7 +46,7 @@ const items = [
     }
 ];
 
-export default function SettingsDeleteObjectTests() {
+export default function CustomSettingsDeleteObjectTests() {
     const handleSubmit = useCallback(
         (event) => {
             event.preventDefault();
@@ -69,9 +69,6 @@ export default function SettingsDeleteObjectTests() {
                                         Prueba
                                     </TableCell>
                                     <TableCell>
-                                        Prioridad
-                                    </TableCell>
-                                    <TableCell>
                                         Parametro Default
                                     </TableCell>
                                     <TableCell>
@@ -89,16 +86,6 @@ export default function SettingsDeleteObjectTests() {
                                             </TableCell>
                                             <TableCell>
                                                 {customer.testName}
-                                            </TableCell>
-                                            <TableCell>                                            
-                                                <Autocomplete
-                                                    defaultValue="Alta"
-                                                    disablePortal
-                                                    options={priorityList}
-                                                    sx={{ width: 50 }}
-                                                    renderInput={(params) => <TextField {...params}
-                                                    />}
-                                                />
                                             </TableCell>
                                             <TableCell>
                                                 {customer.parameter}

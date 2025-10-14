@@ -13,40 +13,40 @@ import {
     TextField
 } from '@mui/material';
 import { Scrollbar } from 'src/components/scrollbar';
-import priorityList from './priority-list';
+import priorityList from '../priority-list';
 
 const items = [
     {
-        testName: 'Delete object',
-        parameter: 'InternetGatewayDevice.Layer3Forwarding.Forwarding.1',
-        value: '300',
+        testName: 'Habilitar Wifi',
+        parameter: 'InternetGatewayDevice.LANDevice.1.WLANConfiguration.2.Enable',
+        value: '1',
         customParameter: '',
         customValue: ''
     },
     {
-        testName: 'Delete object in unexistent branch',
-        parameter: 'InternetGatewayDevice.test.1',
-        value: '120, 1',
+        testName: 'Deshabilitar Wifi',
+        parameter: 'InternetGatewayDevice.LANDevice.1.WLANConfiguration.2.Enable ',
+        value: '0',
         customParameter: '',
         customValue: ''
     },
     {
-        testName: 'Delete object in no multinstance branch',
-        parameter: 'InternetGatewayDevice.1',
-        value: 'test',
+        testName: 'Cambiar SSID',
+        parameter: 'InternetGatewayDevice.LANDevice.1.WLANConfiguration.2.SSID',
+        value: 'MyWifiNetwork5G',
         customParameter: '',
         customValue: ''
     },
     {
-        testName: 'Delete object persistence after reboot',
-        parameter: 'InternetGatewayDevice.ManagementServer.',
-        value: 'test',
+        testName: 'Cambiar Canal',
+        parameter: 'InternetGatewayDevice.LANDevice.1.WLANConfiguration.2.Channel',
+        value: '110',
         customParameter: '',
         customValue: ''
     }
 ];
 
-export default function SettingsDeleteObjectTests() {
+export default function CustomSettingsSPVWifi1Tests() {
     const handleSubmit = useCallback(
         (event) => {
             event.preventDefault();
@@ -63,19 +63,22 @@ export default function SettingsDeleteObjectTests() {
                             <TableHead>
                                 <TableRow>
                                     <TableCell padding="checkbox">
-                                        <Checkbox checked />
+                                        <Checkbox checked/>
                                     </TableCell>
                                     <TableCell>
                                         Prueba
-                                    </TableCell>
-                                    <TableCell>
-                                        Prioridad
                                     </TableCell>
                                     <TableCell>
                                         Parametro Default
                                     </TableCell>
                                     <TableCell>
                                         Parametro Personalizado
+                                    </TableCell>
+                                    <TableCell>
+                                        Valor Default
+                                    </TableCell>
+                                    <TableCell>
+                                        Valor Personalizado
                                     </TableCell>
                                 </TableRow>
                             </TableHead>
@@ -85,23 +88,19 @@ export default function SettingsDeleteObjectTests() {
                                         <TableRow
                                             hover key={customer.parameter}>
                                             <TableCell padding="checkbox">
-                                                <Checkbox checked />
+                                                <Checkbox checked/>
                                             </TableCell>
                                             <TableCell>
                                                 {customer.testName}
                                             </TableCell>
-                                            <TableCell>                                            
-                                                <Autocomplete
-                                                    defaultValue="Alta"
-                                                    disablePortal
-                                                    options={priorityList}
-                                                    sx={{ width: 50 }}
-                                                    renderInput={(params) => <TextField {...params}
-                                                    />}
-                                                />
-                                            </TableCell>
                                             <TableCell>
                                                 {customer.parameter}
+                                            </TableCell>
+                                            <TableCell>
+                                                <input></input>
+                                            </TableCell>
+                                            <TableCell>
+                                                {customer.value}
                                             </TableCell>
                                             <TableCell>
                                                 <input></input>

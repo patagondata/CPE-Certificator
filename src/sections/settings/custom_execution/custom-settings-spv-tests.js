@@ -2,51 +2,72 @@ import * as React from 'react';
 import { useCallback } from 'react';
 import Box from '@mui/material/Box';
 import {
+    Autocomplete,
     Card, Checkbox, Divider, FormControlLabel, Stack, Table,
     TableBody,
     TableCell,
     TableHead,
     TablePagination,
     TableRow,
-    Typography,
-    Autocomplete,
-    TextField
+    TextField,
+    Typography
 } from '@mui/material';
 import { Scrollbar } from 'src/components/scrollbar';
-import priorityList from './priority-list';
+import priorityList from '../priority-list';
 
 const items = [
     {
-        testName: 'Delete object',
-        parameter: 'InternetGatewayDevice.Layer3Forwarding.Forwarding.1',
+        testName: 'SPV single parameter',
+        parameter: 'InternetGatewayDevice.ManagementServer.PeriodicInformInterval',
         value: '300',
         customParameter: '',
         customValue: ''
     },
     {
-        testName: 'Delete object in unexistent branch',
-        parameter: 'InternetGatewayDevice.test.1',
+        testName: 'SPV multiple parameters',
+        parameter: 'InternetGatewayDevice.ManagementServer.PeriodicInformInterval, InternetGatewayDevice.ManagementServer.PeriodicInformEnable ',
         value: '120, 1',
         customParameter: '',
         customValue: ''
     },
     {
-        testName: 'Delete object in no multinstance branch',
-        parameter: 'InternetGatewayDevice.1',
+        testName: 'SPV nonexistent parameter',
+        parameter: 'InternetGatewayDevice.ManagementServer.test ',
         value: 'test',
         customParameter: '',
         customValue: ''
     },
     {
-        testName: 'Delete object persistence after reboot',
-        parameter: 'InternetGatewayDevice.ManagementServer.',
+        testName: 'SPV branch, no object',
+        parameter: 'InternetGatewayDevice.ManagementServer',
         value: 'test',
+        customParameter: '',
+        customValue: ''
+    },
+    {
+        testName: 'SPV wrong data type',
+        parameter: 'InternetGatewayDevice.ManagementServer.PeriodicInformInterval ',
+        value: 'test',
+        customParameter: '',
+        customValue: ''
+    },
+    {
+        testName: 'SPV wrong value',
+        parameter: 'InternetGatewayDevice.LANDevice.1.LANHostConfigManagement',
+        value: 'test',
+        customParameter: '',
+        customValue: ''
+    },
+    {
+        testName: 'SPV non-writable parameter',
+        parameter: 'InternetGatewayDevice.Time.CurrentLocalTime',
+        value: '2020-02-22T12:14:04-04:00',
         customParameter: '',
         customValue: ''
     }
 ];
 
-export default function SettingsDeleteObjectTests() {
+export default function CustomSettingsSPVTests() {
     const handleSubmit = useCallback(
         (event) => {
             event.preventDefault();
@@ -63,19 +84,22 @@ export default function SettingsDeleteObjectTests() {
                             <TableHead>
                                 <TableRow>
                                     <TableCell padding="checkbox">
-                                        <Checkbox checked />
+                                        <Checkbox checked/>
                                     </TableCell>
                                     <TableCell>
                                         Prueba
-                                    </TableCell>
-                                    <TableCell>
-                                        Prioridad
                                     </TableCell>
                                     <TableCell>
                                         Parametro Default
                                     </TableCell>
                                     <TableCell>
                                         Parametro Personalizado
+                                    </TableCell>
+                                    <TableCell>
+                                        Valor Default
+                                    </TableCell>
+                                    <TableCell>
+                                        Valor Personalizado
                                     </TableCell>
                                 </TableRow>
                             </TableHead>
@@ -85,23 +109,19 @@ export default function SettingsDeleteObjectTests() {
                                         <TableRow
                                             hover key={customer.parameter}>
                                             <TableCell padding="checkbox">
-                                                <Checkbox checked />
+                                                <Checkbox checked/>
                                             </TableCell>
                                             <TableCell>
                                                 {customer.testName}
                                             </TableCell>
-                                            <TableCell>                                            
-                                                <Autocomplete
-                                                    defaultValue="Alta"
-                                                    disablePortal
-                                                    options={priorityList}
-                                                    sx={{ width: 50 }}
-                                                    renderInput={(params) => <TextField {...params}
-                                                    />}
-                                                />
-                                            </TableCell>
                                             <TableCell>
                                                 {customer.parameter}
+                                            </TableCell>
+                                            <TableCell>
+                                                <input></input>
+                                            </TableCell>
+                                            <TableCell>
+                                                {customer.value}
                                             </TableCell>
                                             <TableCell>
                                                 <input></input>

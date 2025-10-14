@@ -2,15 +2,18 @@ import * as React from 'react';
 import { useCallback } from 'react';
 import Box from '@mui/material/Box';
 import {
+    Autocomplete,
     Card, Checkbox, Divider, FormControlLabel, Stack, Table,
     TableBody,
     TableCell,
     TableHead,
     TablePagination,
     TableRow,
+    TextField,
     Typography
 } from '@mui/material';
 import { Scrollbar } from 'src/components/scrollbar';
+import priorityList from './priority-list';
 
 const items = [
     {
@@ -87,6 +90,9 @@ export default function SettingsSPVTests() {
                                         Prueba
                                     </TableCell>
                                     <TableCell>
+                                        Prioridad
+                                    </TableCell>
+                                    <TableCell>
                                         Parametro Default
                                     </TableCell>
                                     <TableCell>
@@ -110,6 +116,16 @@ export default function SettingsSPVTests() {
                                             </TableCell>
                                             <TableCell>
                                                 {customer.testName}
+                                            </TableCell>
+                                            <TableCell>                                            
+                                                <Autocomplete
+                                                    defaultValue="Alta"
+                                                    disablePortal
+                                                    options={priorityList}
+                                                    sx={{ width: 50 }}
+                                                    renderInput={(params) => <TextField {...params}
+                                                    />}
+                                                />
                                             </TableCell>
                                             <TableCell>
                                                 {customer.parameter}

@@ -13,32 +13,32 @@ import {
     TextField
 } from '@mui/material';
 import { Scrollbar } from 'src/components/scrollbar';
-import priorityList from './priority-list';
+import priorityList from '../priority-list';
 
 const items = [
     {
-        testName: 'Delete object',
-        parameter: 'InternetGatewayDevice.Layer3Forwarding.Forwarding.1',
+        testName: 'Add object',
+        parameter: 'InternetGatewayDevice.Layer3Forwarding.Forwarding.',
         value: '300',
         customParameter: '',
         customValue: ''
     },
     {
-        testName: 'Delete object in unexistent branch',
-        parameter: 'InternetGatewayDevice.test.1',
+        testName: 'Add object to unexistent branch',
+        parameter: 'InternetGatewayDevice.test',
         value: '120, 1',
         customParameter: '',
         customValue: ''
     },
     {
-        testName: 'Delete object in no multinstance branch',
-        parameter: 'InternetGatewayDevice.1',
+        testName: 'Add object to no multinstance branch',
+        parameter: 'InternetGatewayDevice.',
         value: 'test',
         customParameter: '',
         customValue: ''
     },
     {
-        testName: 'Delete object persistence after reboot',
+        testName: 'Add object persistence after reboot',
         parameter: 'InternetGatewayDevice.ManagementServer.',
         value: 'test',
         customParameter: '',
@@ -46,7 +46,7 @@ const items = [
     }
 ];
 
-export default function SettingsDeleteObjectTests() {
+export default function CustomSettingsAddObjectTests() {
     const handleSubmit = useCallback(
         (event) => {
             event.preventDefault();
@@ -63,13 +63,10 @@ export default function SettingsDeleteObjectTests() {
                             <TableHead>
                                 <TableRow>
                                     <TableCell padding="checkbox">
-                                        <Checkbox checked />
+                                        <Checkbox checked/>
                                     </TableCell>
                                     <TableCell>
                                         Prueba
-                                    </TableCell>
-                                    <TableCell>
-                                        Prioridad
                                     </TableCell>
                                     <TableCell>
                                         Parametro Default
@@ -85,20 +82,10 @@ export default function SettingsDeleteObjectTests() {
                                         <TableRow
                                             hover key={customer.parameter}>
                                             <TableCell padding="checkbox">
-                                                <Checkbox checked />
+                                                <Checkbox checked/>
                                             </TableCell>
                                             <TableCell>
                                                 {customer.testName}
-                                            </TableCell>
-                                            <TableCell>                                            
-                                                <Autocomplete
-                                                    defaultValue="Alta"
-                                                    disablePortal
-                                                    options={priorityList}
-                                                    sx={{ width: 50 }}
-                                                    renderInput={(params) => <TextField {...params}
-                                                    />}
-                                                />
                                             </TableCell>
                                             <TableCell>
                                                 {customer.parameter}

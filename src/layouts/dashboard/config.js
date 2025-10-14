@@ -13,6 +13,7 @@ import CpuChipIcon from '@heroicons/react/24/solid/CpuChipIcon';
 import WrenchScrwDriverIcon from '@heroicons/react/24/solid/WrenchScrewdriverIcon';
 import ShieldCheckIcon from '@heroicons/react/24/solid/ShieldCheckIcon';
 import AcsIcon from '@heroicons/react/24/solid/LinkIcon';
+import RectangleGroup from '@heroicons/react/24/solid/RectangleGroupIcon';
 import { SvgIcon } from '@mui/material';
 
 export const items = [
@@ -40,6 +41,15 @@ export const items = [
     icon: (
       <SvgIcon fontSize="small">
         <WindowIcon />
+      </SvgIcon>
+    )
+  },  
+  {
+    title: 'Grupos de Pruebas',
+    path: '/tests-groups',
+    icon: (
+      <SvgIcon fontSize="small">
+        <RectangleGroup />
       </SvgIcon>
     )
   },   

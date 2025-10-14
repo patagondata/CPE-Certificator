@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Box, Button, Container, Divider, Grid, Paper, Stack, SvgIcon, Typography } from '@mui/material';
+import { Alert, Box, Button, Container, Divider, Grid, Paper, Stack, SvgIcon, Typography } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -39,11 +39,17 @@ const Page = () => (
           <div>
             <ExecutionsStatusProgressAlert />
           </div>
+          <div>
+            El proceso de certificación puede tardar varios minutos en completarse, dependiendo de la cantidad de pruebas seleccionadas y la capacidad del dispositivo. 
+          </div>
+  
+        
           <Divider />
           <div>
             <ExecutionStatusTests />
           </div>
-          <Divider />
+          
+          
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
               <TableBody>
@@ -94,6 +100,18 @@ const Page = () => (
               </TableBody>
             </Table>
           </TableContainer>
+          <Typography variant="caption">
+          
+          <div>
+           * Pruebas marcadas como exitosas no garantizan que el dispositivo haya pasado la certificación, ya que algunas pruebas son opcionales y no todas son necesarias para cada modelo de dispositivo.
+          </div>
+          <div>
+            * Pruebas marcadas como fallidas requieren atención y pueden impedir que el dispositivo obtenga la certificación.
+            </div>
+            <div>
+            * Pruebas marcadas como: <Alert severity="warning">Pendiente de ejecución/validación manual</Alert> están en espera de ejecución/revisión manual y no afectan el estado general de la certificación. 
+          </div>
+          </Typography>
         </Stack>
       </Container>
 
