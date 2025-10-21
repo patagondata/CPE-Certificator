@@ -1,12 +1,14 @@
 import MagnifyingGlassIcon from '@heroicons/react/24/solid/MagnifyingGlassIcon';
-import { Autocomplete, Card, InputAdornment, OutlinedInput, SvgIcon, Table, TableBody, TableRow, TextField, TableCell } from '@mui/material';
+import { Autocomplete, Card, InputAdornment, OutlinedInput, SvgIcon, Table, TableBody, TableRow, TextField, TableCell, CardHeader, Button } from '@mui/material';
 import devicesDashboardList from './devices-list';
 import devicesByDeviceTypeList from './devicesByDeviceType-list';
+import NewExecution from 'src/sections/executions/new-execution';
+import ArrowDownOnSquareIcon from '@heroicons/react/24/solid/ArrowDownOnSquareIcon';
 
 export const DashboardDeviceSearch = () => (
-  <Card sx={{ p: 2, fontWeight: 'bold' }}>
-    Buscar Dispositivo:
-    <Table sx={{ my: 2, width: 250 }}>
+  <Card sx={{ p: 0, fontWeight: 'bold' }} >
+    <CardHeader title="Buscar Dispositivo:" />    
+    <Table sx={{ my: 1, width: 1200 }}>
       <TableBody>
         <TableRow>
           <TableCell>
@@ -29,7 +31,26 @@ export const DashboardDeviceSearch = () => (
               />}
             />
           </TableCell>
-        </TableRow>
+          <TableCell sx={{ my: 1, width: 380 }}>
+            <NewExecution/>
+          </TableCell>          
+          <TableCell></TableCell>                    
+          <TableCell align="right">
+            <Button
+            href='/assets/reports/Reporte-ResumenGeneral-ALCLB3F49710-Huawei 521.pdf' download
+            target='_blank'            
+            sx={{ width: 200 }} 
+                    color="inherit"
+                    startIcon={(
+                      <SvgIcon fontSize="small">
+                        <ArrowDownOnSquareIcon />
+                      </SvgIcon>
+                    )}
+                  >
+                    Exportar Reporte
+                  </Button>
+          </TableCell>
+        </TableRow>       
       </TableBody>
     </Table>
   </Card>

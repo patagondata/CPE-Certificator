@@ -54,15 +54,6 @@ export const items = [
     )
   },   
   {
-    title: 'Certificación de dispositivos',
-    path: '/executions',
-    icon: (
-      <SvgIcon fontSize="small">
-        <ShieldCheckIcon />
-      </SvgIcon>
-    )
-  },  
-  {
     title: 'Configuración de Pruebas',
     path: '/settings',
     icon: (

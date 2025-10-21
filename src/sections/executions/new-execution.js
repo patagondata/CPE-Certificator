@@ -15,7 +15,7 @@ import { SideNavItem } from 'src/sections/executions/nav-item-execution-new';
 import devicesByDeviceTypeList from '../dashboard/devicesByDeviceType-list';
 
 export default function NewExecution() {
-  const [checked, setChecked] = React.useState(true);
+  const [checked, setChecked] = React.useState(false);
 
   const handleChange = (event) => {
     setChecked(event.target.checked);
@@ -70,7 +70,7 @@ export default function NewExecution() {
         <DialogTitle>Certificación de dispositivos</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Para ejecutar un nuevo set de pruebas, por favor elija un dispositivo.
+            Dispositivo a certificar:
           </DialogContentText>
           <form onSubmit={handleSubmit} id="subscription-form">
 

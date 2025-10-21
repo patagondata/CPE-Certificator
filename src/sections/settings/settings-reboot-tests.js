@@ -67,7 +67,7 @@ export default function SettingsRebootTests() {
                                                     options={['Automática', 'Manual']}
                                                     sx={{ width: 250 }}
                                                     renderInput={(params) => <TextField {...params}
-                                                        label="Tipom de ejecución"
+                                                        label="Tipo de ejecución"
                                                     />}
                                                 />
                                             </TableCell>

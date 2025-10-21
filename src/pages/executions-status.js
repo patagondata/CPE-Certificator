@@ -82,7 +82,7 @@ const Page = () => (
                   <TableCell></TableCell>
                   <TableCell align="left">
                     <Button
-                      href="/assets/example-files/TR_Certification_V1.1.xlsx" target="_blank" download
+                      href="/assets/reports/Reporte-Detallado-ALCLB3F49710-Huawei 521.xlsx" target="_blank" download
                       variant="contained"
                       startIcon={(
                         <SvgIcon fontSize="small">

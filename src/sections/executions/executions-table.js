@@ -37,8 +37,8 @@ export const ExecutionsTable = (props) => {
 
   return (
     <Card sx={sx}>
-      
-      <ExecutionsDeviceSearch/>
+      <CardHeader title="Ejecuciones Recientes" />
+      <Divider /> 
       <Scrollbar sx={{ flexGrow: 1 }}>
         <Box sx={{ minWidth: 800 }}>
           <Table>
@@ -58,6 +58,9 @@ export const ExecutionsTable = (props) => {
                 </TableCell>
                 <TableCell>
                   Estatus
+                </TableCell>
+                <TableCell>
+                  Tasa de Exito
                 </TableCell>
                 <TableCell>
                   Detalles
@@ -93,6 +96,11 @@ export const ExecutionsTable = (props) => {
                         {execution.status}
                       </SeverityPill>
                     </TableCell>
+                    <TableCell>
+                      <SeverityPill color={statusMap[execution.status]}>
+                        {execution.successRate}
+                      </SeverityPill>
+                    </TableCell>
                     <TableCell> 
                       <SideNavItem
                         active="true"
@@ -109,7 +117,7 @@ export const ExecutionsTable = (props) => {
                         <Grid item xs={6}>
                           <Tooltip title="Exportar Archivo Excel">
                             <IconButton edge="end" href="/assets/example-files/TR_Certification_V1.1.xlsx" target="_blank" download>
-                              <a href="/assets/example-files/TR_Certification_V1.1.xlsx" target="_blank" download>
+                              <a href="/assets/reports/Reporte-Detallado-ALCLB3F49710-Huawei 521.xlsx" target="_blank" download>
                                 <SvgIcon>
                                   <ExcelIcon />
                                 </SvgIcon>
@@ -120,7 +128,7 @@ export const ExecutionsTable = (props) => {
                         <Grid item xs={6}>
                           <Tooltip title="Exportar Archivo PDF">
                             <IconButton edge="end">
-                              <a href="/assets/example-files/TR_Certification_V1.1.xlsx" target="_blank" download>
+                              <a href="/assets/reports/Reporte-ResumenEjecutivo-ALCLB3F49710-Huawei 521.pdf" target="_blank" download>
                                 <SvgIcon>
                                   <PDFIcon />
                                 </SvgIcon>
