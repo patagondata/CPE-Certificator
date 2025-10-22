@@ -36,7 +36,32 @@ const Page = () => (
         <Grid
           container
           spacing={3}
-        >                    
+        >   
+         <Grid
+            xs={12}
+            lg={8}
+          >
+            <OverviewLatestExecutions
+              chartSeries={[
+                {
+                  name: 'Este Día',
+                  data: [1, 1, 5, 2, 1, 3, 2]
+                }
+              ]}
+              sx={{ height: '100%' }}
+            />
+          </Grid>
+          <Grid
+            xs={12}
+            md={6}
+            lg={4}
+          >
+            <OverviewTraffic
+              chartSeries={[80, 5, 15]}
+              labels={['Exitosas', 'Pendientes', 'Fallidas']}
+              sx={{ height: '100%' }}
+            />
+          </Grid>                  
           <Grid
             xs={12}
             md={6}
@@ -96,31 +121,7 @@ const Page = () => (
                             sx={{ height: '100%' }}
                           />
           </Grid>  
-          <Grid
-            xs={12}
-            lg={8}
-          >
-            <OverviewLatestExecutions
-              chartSeries={[
-                {
-                  name: 'Este Día',
-                  data: [1, 1, 5, 2, 1, 3, 2]
-                }
-              ]}
-              sx={{ height: '100%' }}
-            />
-          </Grid>
-          <Grid
-            xs={12}
-            md={6}
-            lg={4}
-          >
-            <OverviewTraffic
-              chartSeries={[80, 5, 15]}
-              labels={['Exitosas', 'Pendientes', 'Fallidas']}
-              sx={{ height: '100%' }}
-            />
-          </Grid> 
+         
         </Grid>
       </Container>
     </Box>
