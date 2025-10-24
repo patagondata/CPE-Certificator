@@ -8,19 +8,18 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Alert } from '@mui/material';
 
-function createData(testName, testResult, details) {
-    return { testName, testResult, details };
+function createData(testName, testResult, details, parameter, value) {
+    return { testName, testResult, details, parameter, value };
 }
 
 const rows = [
-    createData('SPV single parameter', "success", ""),
-    createData('SPV multiple parameters', "success", ""),
-    createData('SPV all data types', "success", ""),
-    createData('SPV nonexistent parameter', "success", ""),
-    createData('SPV branch, no object', "error", "Unexcpected response, it was expected to receive 9005 Invalid parameter name"),
-    createData('SPV wrong data type', "success", ""),
-    createData('SPV wrong value', "success", ""),
-    createData('SPV non-writable parameter', "success", "")
+    createData('SPV single parameter', "success", "", "InternetGatewayDevice.ManagementServer.PeriodicInformInterval", "300"),
+    createData('SPV multiple parameters', "success", "", "InternetGatewayDevice.ManagementServer.PeriodicInformInterval, InternetGatewayDevice.ManagementServer.PeriodicInformEnable", "120, 1"),
+    createData('SPV nonexistent parameter', "success", "", "InternetGatewayDevice.ManagementServer.test", "test"),
+    createData('SPV branch, no object', "error", "NBIOperationResult - STATUS_ABORTED - Device raise an unexpected behaviour", "InternetGatewayDevice.ManagementServer", "test"),
+    createData('SPV wrong data type', "success", "", "InternetGatewayDevice.ManagementServer.PeriodicInformInterval", "test"),
+    createData('SPV wrong value', "success", "", "InternetGatewayDevice.LANDevice.1.LANHostConfigManagement", "test"),
+    createData('SPV non-writable parameter', "success", "", "InternetGatewayDevice.Time.CurrentLocalTime", "2020-02-22T12:14:04-04:00")
 ];
 
 export default function ExecutionsResultGPV() {
@@ -32,7 +31,15 @@ export default function ExecutionsResultGPV() {
             <TableCell align="left" >
               Prueba
             </TableCell>
-            <TableCell align="left">Observaciones</TableCell>
+            <TableCell align="left">
+                Parametro
+            </TableCell>
+            <TableCell align="left">
+                Valor
+            </TableCell>
+            <TableCell align="left">
+                Detalles
+            </TableCell>
           </TableRow>
         </TableHead>
                 <TableBody>
@@ -45,6 +52,12 @@ export default function ExecutionsResultGPV() {
                                 <Alert severity={row.testResult}>
                                     {row.testName}
                                 </Alert>
+                            </TableCell>
+                            <TableCell align="left">
+                                {row.parameter}
+                            </TableCell>
+                            <TableCell align="left">
+                                {row.value}
                             </TableCell>
                             <TableCell align="left">
                                 {row.details}

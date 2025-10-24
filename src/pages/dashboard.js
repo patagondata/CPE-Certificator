@@ -79,7 +79,8 @@ const Page = () => (
                                 status: 'En Progreso',
                                 sn: 'ALCLB3F49710',
                                 user: 'David Flores',
-                                successRate: '28%'
+                                successRate: '28%',
+                                candidateToReExecute: false
                               },
                               {
                                 id: '9eaa1c7dd4433f413c308ce2',
@@ -91,7 +92,8 @@ const Page = () => (
                                 status: 'completado',
                                 sn: 'ALCLB3F49710',
                                 user: 'David Flores',
-                                successRate: '80%'
+                                successRate: '80%',
+                                candidateToReExecute: true
                               },
                               {
                                 id: '01a5230c811bd04996ce7c13',
@@ -103,7 +105,8 @@ const Page = () => (
                                 status: 'incompleto',
                                 sn: 'ALCLB3F49710',
                                 user: 'Pablo Navarro',
-                                successRate: '55%'
+                                successRate: '55%',
+                                candidateToReExecute: false
                               },
                               {
                                 id: '1f4e1bd0a87cea23cdb83d18',
@@ -115,7 +118,8 @@ const Page = () => (
                                 status: 'falló',
                                 sn: 'ALCLB3F49710',
                                 user: 'David Flores',                                
-                                successRate: '10%'
+                                successRate: '10%',
+                                candidateToReExecute: true
                               }
                             ]}
                             sx={{ height: '100%' }}

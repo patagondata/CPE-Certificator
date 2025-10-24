@@ -65,7 +65,8 @@ const Page = () => (
                     status: 'En Progreso',
                     sn: 'ALCLB3F49710',
                     user: 'David Flores',
-                    successRate: '28%'
+                    successRate: '28%',
+                    candidateToReExecute: false
                   },
                   {
                     id: '9eaa1c7dd4433f413c308ce2',
@@ -77,7 +78,8 @@ const Page = () => (
                     status: 'completado',
                     sn: 'FSH210500076',
                     user: 'David Flores',
-                    successRate: '80%'
+                    successRate: '80%',
+                     candidateToReExecute: true
                   },
                   {
                     id: '01a5230c811bd04996ce7c13',
@@ -89,7 +91,8 @@ const Page = () => (
                     status: 'incompleto',
                     sn: '3FE75113BAAB',
                     user: 'Pablo Navarro',
-                    successRate: '55%'
+                    successRate: '55%',
+                     candidateToReExecute: false
                   },
                   {
                     id: '1f4e1bd0a87cea23cdb83d18',
@@ -101,7 +104,8 @@ const Page = () => (
                     status: 'falló',
                     sn: 'ALCLFBEB6218',
                     user: 'David Flores',
-                    successRate: '10%'
+                    successRate: '10%',
+                     candidateToReExecute: true
                   },
                   {
                     id: '9f974f239d29ede969367103',
@@ -113,7 +117,8 @@ const Page = () => (
                     status: 'completado',
                     sn: 'ALCLB3CEEF97',
                     user: 'Pablo Navarro',
-                    successRate: '95%'
+                    successRate: '95%',
+                     candidateToReExecute: true
                   },
                   {
                     id: 'ffc83c1560ec2f66a1c05596',
@@ -125,7 +130,8 @@ const Page = () => (
                     status: 'completado',
                     sn: '3TG01454AAAA',
                     user: 'David Flores',
-                    successRate: '100%'
+                    successRate: '100%',
+                     candidateToReExecute: true
                   }
                 ]}
                 sx={{ height: '100%' }}

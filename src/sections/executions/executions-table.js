@@ -23,8 +23,10 @@ import EyeIcon from '@heroicons/react/24/solid/EyeIcon';
 import ExcelIcon from '@heroicons/react/24/solid/DocumentChartBarIcon';
 import PDFIcon from '@heroicons/react/24/solid/DocumentTextIcon';
 import { SideNavItem } from 'src/sections/executions/nav-item-execution-details';
-import ClipboardIcon from '@heroicons/react/24/solid/ClipboardIcon';
 import { ExecutionsDeviceSearch } from 'src/sections/executions/executions-devices-search';
+import RocketLaunchIcon from '@heroicons/react/24/solid/RocketLaunchIcon';
+import NoSymbolIcon from '@heroicons/react/24/solid/NoSymbolIcon';
+import ReExecution from 'src/sections/executions/re-execution';
 
 const statusMap = {
   incompleto: 'warning',
@@ -66,6 +68,9 @@ export const ExecutionsTable = (props) => {
                   Detalles
                 </TableCell>
                 <TableCell>
+                  Re-Ejecutar
+                </TableCell>
+                <TableCell>
                   Exportar Resultados
                 </TableCell>
               </TableRow>
@@ -102,6 +107,7 @@ export const ExecutionsTable = (props) => {
                       </SeverityPill>
                     </TableCell>
                     <TableCell> 
+                      <Tooltip title="Ver Detalles de la Ejecución"> 
                       <SideNavItem
                         active="true"
                         disabled="false"
@@ -111,6 +117,24 @@ export const ExecutionsTable = (props) => {
                         path="/executions-status"
                         title=""
                       />
+                      </Tooltip>
+                    </TableCell>
+                    <TableCell>
+                      {execution.candidateToReExecute ? (
+                        <Tooltip title="Re-Ejecutar Proceso de Certificación">
+                        <ReExecution/>                                        
+                        </Tooltip> 
+                      ) : (
+                        <Tooltip title="No es candidato a re-ejecución debido al estatus actual de la ejecución">
+                          <span>
+                            <IconButton edge="end" disabled>
+                              <SvgIcon>
+                                <NoSymbolIcon />
+                              </SvgIcon>
+                            </IconButton>
+                          </span>
+                        </Tooltip>
+                      )}
                     </TableCell>
                     <TableCell>
                       <Grid container spacing={2}>

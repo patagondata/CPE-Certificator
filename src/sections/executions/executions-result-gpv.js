@@ -8,16 +8,16 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Alert } from '@mui/material';
 
-function createData(testName, testResult, details) {
-    return { testName, testResult, details };
+function createData(testName, testResult, details, parameter) {
+    return { testName, testResult, details, parameter };
 }
 
 const rows = [
-    createData('GPV single parameter', "success", ""),
-    createData('GPV multiple parameters', "success", ""),
-    createData('GPV Branch', "success", ""),
-    createData('GPV Full tree', "success", ""),
-    createData('GPV nonexistent parameter', "error", "Unexcpected response, it was expected to receive 9005 Invalid parameter name"),
+    createData('GPV single parameter', "success", "", "InternetGatewayDevice.ManagementServer.PeriodicInformInterval"),
+    createData('GPV multiple parameters', "success", "", "nternetGatewayDevice.ManagementServer.PeriodicInformInterval, InternetGatewayDevice.ManagementServer.PeriodicInformEnable"),
+    createData('GPV Branch', "success", "", "InternetGatewayDevice."),
+    createData('GPV Full tree', "error", "NBIOperationResult - STATUS_EXECUTION_TIMEOUT - Device got stuck", "InternetGatewayDevice.ManagementServer."),
+    createData('GPV nonexistent parameter', "success", "", "InternetGatewayDevice.ManagementServer."),
 ];
 
 export default function ExecutionsResultGPV() {
@@ -29,7 +29,12 @@ export default function ExecutionsResultGPV() {
             <TableCell align="left" >
               Prueba
             </TableCell>
-            <TableCell align="left">Observaciones</TableCell>
+            <TableCell align="left">
+                Parametro
+            </TableCell>
+            <TableCell align="left" >
+                Detalles
+            </TableCell>
           </TableRow>
         </TableHead>
                 <TableBody>
@@ -42,6 +47,9 @@ export default function ExecutionsResultGPV() {
                                 <Alert severity={row.testResult}>
                                     {row.testName}
                                 </Alert>
+                            </TableCell>
+                            <TableCell align="left">
+                                {row.parameter}
                             </TableCell>
                             <TableCell align="left">
                                 {row.details}

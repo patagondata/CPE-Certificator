@@ -29,7 +29,7 @@ export default function ExecutionsResultReboot() {
                         <TableCell align="left" >
                             Estatus
                         </TableCell>
-                        <TableCell align="left">Observaciones</TableCell>
+                        <TableCell align="left">Detalles</TableCell>
                         <TableCell align="left" >
                             Iniciar prueba
                         </TableCell>

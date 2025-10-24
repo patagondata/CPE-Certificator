@@ -8,14 +8,14 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Alert, Box, CircularProgress } from '@mui/material';
 
-function createData(testName, testResult, details) {
-    return { testName, testResult, details };
+function createData(testName, testResult, details, parameter) {
+    return { testName, testResult, details, parameter };
 }
 
 const rows = [
-    createData('Add object to unexistent branch', "warning", ""),
-    createData('Add object to no multinstance branch', "warning", ""),
-    createData('Add object persistence after reboot', "warning", ""),
+    createData('Add object to unexistent branch', "warning", "", "InternetGatewayDevice.test"),
+    createData('Add object to no multinstance branch', "warning", "", "InternetGatewayDevice."),
+    createData('Add object persistence after reboot', "warning", "", "InternetGatewayDevice.ManagementServer."),
 ];
 
 export default function ExecutionsResultAddObject() {
@@ -27,7 +27,12 @@ export default function ExecutionsResultAddObject() {
                         <TableCell align="left" >
                             Prueba
                         </TableCell>
-                        <TableCell align="left">Observaciones</TableCell>
+                        <TableCell align="left">
+                            Parametro
+                        </TableCell>
+                        <TableCell align="left">
+                            Detalles
+                        </TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -40,7 +45,7 @@ export default function ExecutionsResultAddObject() {
                             </Alert>
                         </TableCell>
                         <TableCell align="left">
-
+                            InternetGatewayDevice.Layer3Forwarding.Forwarding.
                         </TableCell>
                     </TableRow>
                     {rows.map((row) => (
@@ -56,6 +61,9 @@ export default function ExecutionsResultAddObject() {
                                     </Box>
                                     
                                 </Alert>
+                            </TableCell>
+                            <TableCell align="left">
+                                {row.parameter}
                             </TableCell>
                             <TableCell align="left">
                                 {row.details}
